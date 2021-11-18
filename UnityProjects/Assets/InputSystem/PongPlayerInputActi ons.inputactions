@@ -11,7 +11,7 @@
                     "id": "bb313feb-a11c-4959-bb5f-c9ea61d99dd3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "Down",
@@ -19,7 +19,7 @@
                     "id": "41c2702e-738b-42f1-b432-22913c248416",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=2)"
                 }
             ],
             "bindings": [
@@ -57,7 +57,7 @@
                     "id": "32309a76-a394-4e6a-9ffd-1309dc86f9b7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "Down",
@@ -65,7 +65,7 @@
                     "id": "e7bfcb77-ee23-4bea-ac43-49561fd073b6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
