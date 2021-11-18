@@ -1,0 +1,98 @@
+{
+    "name": "PongPlayerInputActi ons",
+    "maps": [
+        {
+            "name": "PongPlayer1",
+            "id": "c77468a7-8036-4b54-9f7e-ea77b62a27c0",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "bb313feb-a11c-4959-bb5f-c9ea61d99dd3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "41c2702e-738b-42f1-b432-22913c248416",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7facbe53-15d0-4f65-871d-3828173750d1",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "727b038a-f369-4fef-bcd1-f9ded9bf0038",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PongPlayer2",
+            "id": "dff2c18d-8c1d-4905-8ffa-e71b42b9a0c9",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "32309a76-a394-4e6a-9ffd-1309dc86f9b7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "e7bfcb77-ee23-4bea-ac43-49561fd073b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1cf11a7d-c7f1-45ae-841a-3c238caf59a7",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbb80ffe-a510-418f-b72b-cc9cd6578946",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

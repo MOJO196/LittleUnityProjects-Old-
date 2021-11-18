@@ -1,29 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 public class PongPlayerControll : MonoBehaviour
-{
-    private float speed;
-    private int playerID;
-    private string playerInput;
-    // Start is called before the first frame update
-    void Start()
+{   
+    private Rigidbody2D rb;
+    public float speed;
+
+    private void Awake()
     {
-        if (playerID == 0)
-        {
-            playerInput = "PongPlayer1";
-        } 
-        else if (playerID == 1) 
-        {
-            playerInput = "PongPlayer2";
-        }
+        rb = GetComponent<Rigidbody2D>();
+        Physics2D.gravity = Vector2.zero;
+    } 
+    public void Up()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, speed);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Down()
     {
-        
+        rb.velocity = new Vector2(rb.velocity.x, -speed);
     }
 }
