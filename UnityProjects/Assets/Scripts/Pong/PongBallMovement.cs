@@ -15,20 +15,43 @@ public class PongBallMovement : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.velocity = new Vector2(speed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {                
         switch(other.name)
         {
-            case "PongPlayer1":
-                rb.velocity = new Vector2(-GameObject.Find("PongPlayer1").transform.position.x, -GameObject.Find("PongPlayer1").transform.position.y);
-                Debug.Log(GameObject.Find("PongPlayer1").transform.position.x+", "+GameObject.Find("PongPlayer1").transform.position.y);
+            case "DeathZone1":
+                //Player2 Scored
+                PongScoreManager.instance.Score(2);
+                if (PongScoreManager.instance.Score(0))
+                    Destroy(gameObject);                
+                StartCoroutine(Appear(1));
             break;
-            case "PongPlayer2":
-                rb.velocity = new Vector2(-GameObject.Find("PongPlayer2").transform.position.x, -GameObject.Find("PongPlayer1").transform.position.y);
-            break;    
+            case "DeathZone2":
+                //Player1 Scored
+                PongScoreManager.instance.Score(1);
+                if (PongScoreManager.instance.Score(0))
+                    Destroy(gameObject);
+                StartCoroutine(Appear(2));
+            break;
+            default:
+                rb.velocity = new Vector2(-other.transform.position.x, -other.transform.position.y);
+            break;
         }
+    }
+
+    IEnumerator Appear(int pointingTowardsPlayer)
+    {
+        rb.position = new Vector2(0, 0);
+        rb.velocity = new Vector2(0, 0);
+
+        yield return new WaitForSeconds(1);
+        
+        if (pointingTowardsPlayer == 1)
+            rb.velocity = new Vector2(-speed, 0);
+        else if (pointingTowardsPlayer == 2)
+            rb.velocity = new Vector2(speed, 0);
     }
 }
