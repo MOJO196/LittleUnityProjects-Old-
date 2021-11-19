@@ -15,7 +15,7 @@ public class PongBallMovement : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = new Vector2(speed, 0);
+        rb.velocity = new Vector2(speed, Random.Range(-1,1)*speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,17 +28,20 @@ public class PongBallMovement : MonoBehaviour
                 if (PongScoreManager.instance.Score(0))
                     Destroy(gameObject);                
                 StartCoroutine(Appear(1));
-            break;
+                break;
             case "DeathZone2":
                 //Player1 Scored
                 PongScoreManager.instance.Score(1);
                 if (PongScoreManager.instance.Score(0))
                     Destroy(gameObject);
                 StartCoroutine(Appear(2));
-            break;
+                break;
+            case "Line":
+                rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y).normalized*speed;
+                break;
             default:
-                rb.velocity = new Vector2(-other.transform.position.x, -other.transform.position.y);
-            break;
+                rb.velocity = new Vector2(-(rb.velocity.x-other.transform.position.x), (rb.velocity.y-other.transform.position.y)).normalized*speed;
+                break;
         }
     }
 
