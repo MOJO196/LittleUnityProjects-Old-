@@ -6,7 +6,6 @@ public class PongPlayerControll : MonoBehaviour
 {   
     public float speed;
     private Rigidbody2D rb;
-    private float pressTime;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
