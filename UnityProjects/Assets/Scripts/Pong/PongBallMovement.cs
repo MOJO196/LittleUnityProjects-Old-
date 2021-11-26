@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ public class PongBallMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y).normalized*speed;
                 break;
             default:
-                rb.velocity = new Vector2(-(rb.velocity.x-other.transform.position.x), (rb.velocity.y-other.transform.position.y)).normalized*speed;
+                rb.velocity = new Vector2(-(rb.velocity.x-other.transform.position.x), (other.transform.position.y-rb.velocity.y)).normalized*speed;
                 break;
         }
     }
