@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Pong/Pong.unity
+- path: Assets/Scenes/TickTackToe/TickTackToe.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
