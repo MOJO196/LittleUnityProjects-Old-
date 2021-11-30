@@ -7,11 +7,12 @@ public class TickTackToeGame : MonoBehaviour
     public static TickTackToeGame instance;
     void Awake()
     {
-        
+
         if (Random.value >= 0.5)
         {
             TickTackToeStats.player1ToMove = true;
-        }            
+        }
+
         TickTackToeStats.player1ToMove = false;
 
         if (instance != null)
@@ -31,24 +32,24 @@ public class TickTackToeGame : MonoBehaviour
         //Rows
         if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[2] == player)
             PlayerWon(player);
-        if (TickTackToeStats.buttonUsed[3] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[5] == player)
+        else if (TickTackToeStats.buttonUsed[3] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[5] == player)
             PlayerWon(player);
-        if (TickTackToeStats.buttonUsed[6] == player && TickTackToeStats.buttonUsed[7] == player && TickTackToeStats.buttonUsed[8] == player)
+        else if (TickTackToeStats.buttonUsed[6] == player && TickTackToeStats.buttonUsed[7] == player && TickTackToeStats.buttonUsed[8] == player)
             PlayerWon(player);
         //Columns
-        if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[3] == player && TickTackToeStats.buttonUsed[6] == player)
+        else if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[3] == player && TickTackToeStats.buttonUsed[6] == player)
             PlayerWon(player);
-        if (TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[7] == player)
+        else if (TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[7] == player)
             PlayerWon(player);
-        if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[5] == player && TickTackToeStats.buttonUsed[8] == player)
+        else if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[5] == player && TickTackToeStats.buttonUsed[8] == player)
             PlayerWon(player);
         //Diagonals
-        if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[8] == player)
+        else if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[8] == player)
             PlayerWon(player);
-        if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[6] == player)
+        else if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[6] == player)
             PlayerWon(player);
-
-        if (TickTackToeStats.moves == 9)
+        //Check for draw
+        else if (TickTackToeStats.moves == 9)
         {
             Debug.Log("Draw");
             TickTackToeStats.draw = true;
@@ -65,5 +66,10 @@ public class TickTackToeGame : MonoBehaviour
 
         TickTackToeStats.gameRunning = false;
         Debug.Log("Player " + player + " won!");
+    }
+
+    public void ComputerMove()
+    {
+        
     }
 }
