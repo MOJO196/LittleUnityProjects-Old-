@@ -39,8 +39,9 @@
      <Compile Include="Assets\Scripts\Pong\PongBallMovement.cs" />
      <Compile Include="Assets\Scripts\Pong\PongPlayerControll.cs" />
      <Compile Include="Assets\Scripts\Pong\PongScoreManager.cs" />
+     <Compile Include="Assets\Scripts\TickTackToe\TickTackToeButtonClick.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TickTackToeGame.cs" />
-     <Compile Include="Assets\Scripts\TickTackToe\TikTackToeStats.cs" />
+     <Compile Include="Assets\Scripts\TickTackToe\TickTackToeStats.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
