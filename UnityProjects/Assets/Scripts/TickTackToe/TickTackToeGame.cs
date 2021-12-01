@@ -7,22 +7,10 @@ public class TickTackToeGame : MonoBehaviour
     public static TickTackToeGame instance;
     void Awake()
     {
-
-        if (Random.value >= 0.5)
-        {
-            TickTackToeStats.player1ToMove = true;
-        }
-
-        TickTackToeStats.player1ToMove = false;
-
         if (instance != null)
-        {
             Destroy(gameObject);
-        }
         else
-        {
             instance = this;
-        }
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -63,13 +51,13 @@ public class TickTackToeGame : MonoBehaviour
         {
             case 1:
                 Debug.Log("Player " + player + " won!");
-            break;
+                break;
             case 2:
-            if (TickTackToeStats.computer)
-                Debug.Log("Computer won!");
-            else
-                Debug.Log("Player " + player + " won!");
-            break;
+                if (TickTackToeStats.computer)
+                    Debug.Log("Computer won!");
+                else
+                    Debug.Log("Player " + player + " won!");
+                break;
         }
 
         TickTackToeStats.gameRunning = false;

@@ -1214,6 +1214,7 @@ GameObject:
   - component: {fileID: 1913545386}
   - component: {fileID: 1913545389}
   - component: {fileID: 1913545390}
+  - component: {fileID: 1913545391}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1311,24 +1312,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  button1: {fileID: 8296700829282953501}
-  button2: {fileID: 870430594}
-  button3: {fileID: 1886795768}
-  button4: {fileID: 2015778127}
-  button5: {fileID: 907062402}
-  button6: {fileID: 513063661}
-  button7: {fileID: 1497970515}
-  button8: {fileID: 11934865}
-  button9: {fileID: 1451127430}
+  - {fileID: 8296700829282953501}
+  - {fileID: 870430594}
+  - {fileID: 1886795768}
+  - {fileID: 2015778127}
+  - {fileID: 907062402}
+  - {fileID: 513063661}
+  - {fileID: 1497970515}
+  - {fileID: 11934865}
+  - {fileID: 1451127430}
+--- !u!114 &1913545391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913545385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c246b2425b0babd4498c34f7c1eb1b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomPlayerToBeginn: 1
+  player1ToBeginn: 0
+  againstComputer: 1
 --- !u!1 &1964455285
 GameObject:
   m_ObjectHideFlags: 0

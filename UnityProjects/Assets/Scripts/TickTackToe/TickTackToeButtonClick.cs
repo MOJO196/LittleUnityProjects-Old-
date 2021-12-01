@@ -15,13 +15,13 @@ public class TickTackToeButtonClick : MonoBehaviour
 
             if (TickTackToeStats.player1ToMove)
             {
-                buttonImage.color = Color.red;
+                buttonImage.color = Color.blue;
                 TickTackToeStats.buttonUsed[buttonPosition - 1] = 1;
                 TickTackToeGame.instance.CheckGameState(1);
             }
             else
             {
-                buttonImage.color = Color.blue;
+                buttonImage.color = Color.red;
                 TickTackToeStats.buttonUsed[buttonPosition - 1] = 2;
                 TickTackToeGame.instance.CheckGameState(2);
             }
@@ -30,13 +30,7 @@ public class TickTackToeButtonClick : MonoBehaviour
             if (TickTackToeStats.computer && !TickTackToeStats.player1ToMove)
                 TickTackToeButtonManager.instance.ComputerMove();
         }
-        else if (!TickTackToeStats.gameRunning)
-        {
-            //Next Scene
-        }
         else
-        {
-            
-        }
+            ;//Next Scene
     }
 }
