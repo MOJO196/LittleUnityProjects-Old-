@@ -29,7 +29,7 @@ public class TickTackToeButtonManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-        
+
         buttons[0] = button1;
         buttons[1] = button2;
         buttons[2] = button3;
@@ -46,12 +46,11 @@ public class TickTackToeButtonManager : MonoBehaviour
 
     public void ComputerMove()
     {
-
         if (TickTackToeStats.gameRunning)
         {
             while (true)
             {
-                int computerMove = Random.Range(0, 8);
+                int computerMove = Random.Range(0, 9);
 
                 if (TickTackToeStats.buttonUsed[computerMove] == 0)
                 {

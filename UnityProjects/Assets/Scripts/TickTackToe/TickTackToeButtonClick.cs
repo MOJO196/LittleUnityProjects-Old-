@@ -7,7 +7,7 @@ public class TickTackToeButtonClick : MonoBehaviour
 {
     public int buttonPosition;
     public Image buttonImage;
-    public int ButtonClick()
+    public void ButtonClick()
     {
         if (TickTackToeStats.buttonUsed[buttonPosition - 1] == 0 && TickTackToeStats.gameRunning)
         {
@@ -36,9 +36,7 @@ public class TickTackToeButtonClick : MonoBehaviour
         }
         else
         {
-            return 1;
+            
         }
-
-        return 0;
     }
 }

@@ -46,7 +46,7 @@ public class TickTackToeGame : MonoBehaviour
         //Diagonals
         else if (TickTackToeStats.buttonUsed[0] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[8] == player)
             PlayerWon(player);
-        else if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[1] == player && TickTackToeStats.buttonUsed[6] == player)
+        else if (TickTackToeStats.buttonUsed[2] == player && TickTackToeStats.buttonUsed[4] == player && TickTackToeStats.buttonUsed[6] == player)
             PlayerWon(player);
         //Check for draw
         else if (TickTackToeStats.moves == 9)
@@ -59,12 +59,19 @@ public class TickTackToeGame : MonoBehaviour
 
     public void PlayerWon(int player)
     {
-        if (player == 1)
-            TickTackToeStats.player1Won = true;
-        else
-            TickTackToeStats.player2Won = true;
+        switch (player)
+        {
+            case 1:
+                Debug.Log("Player " + player + " won!");
+            break;
+            case 2:
+            if (TickTackToeStats.computer)
+                Debug.Log("Computer won!");
+            else
+                Debug.Log("Player " + player + " won!");
+            break;
+        }
 
         TickTackToeStats.gameRunning = false;
-        Debug.Log("Player " + player + " won!");
     }
 }
