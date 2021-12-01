@@ -67,9 +67,4 @@ public class TickTackToeGame : MonoBehaviour
         TickTackToeStats.gameRunning = false;
         Debug.Log("Player " + player + " won!");
     }
-
-    public void ComputerMove()
-    {
-        
-    }
 }

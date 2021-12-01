@@ -27,6 +27,8 @@ public class TickTackToeButtonClick : MonoBehaviour
             }
 
             TickTackToeStats.player1ToMove = !TickTackToeStats.player1ToMove;
+            if (TickTackToeStats.computer && !TickTackToeStats.player1ToMove)
+                TickTackToeButtonManager.instance.ComputerMove();
         }
         else if (!TickTackToeStats.gameRunning)
         {

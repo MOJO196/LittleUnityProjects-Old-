@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Pong\PongPlayerControll.cs" />
      <Compile Include="Assets\Scripts\Pong\PongScoreManager.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TickTackToeButtonClick.cs" />
+     <Compile Include="Assets\Scripts\TickTackToe\TickTackToeButtonManager.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TickTackToeGame.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TickTackToeStats.cs" />
     <Reference Include="UnityEngine">
