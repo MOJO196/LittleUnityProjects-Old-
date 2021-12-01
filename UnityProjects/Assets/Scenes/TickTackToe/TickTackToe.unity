@@ -1333,8 +1333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246b2425b0babd4498c34f7c1eb1b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomPlayerToBeginn: 1
-  player1ToBeginn: 0
+  randomPlayerToBeginn: 0
+  player1ToBeginn: 1
   againstComputer: 1
 --- !u!1 &1964455285
 GameObject:
