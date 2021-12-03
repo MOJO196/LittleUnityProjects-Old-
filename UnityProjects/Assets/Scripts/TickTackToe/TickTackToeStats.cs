@@ -6,6 +6,7 @@ public static class TickTackToeStats
     public static bool gameRunning = true;
     public static int moves;
     public static int[] buttonUsed = new int[9];
+    public static int[] movesDone = new int[9];
     //GameModes
     public static bool computer;
     //Result

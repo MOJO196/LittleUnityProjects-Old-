@@ -25,7 +25,7 @@ public class TickTackToeButtonManager : MonoBehaviour
     {
         if (TickTackToeStats.gameRunning)
         {
-            //AI
+            //AI Level 1
             while (true)
             {
                 int computerMove = Random.Range(0, 9);
@@ -37,8 +37,8 @@ public class TickTackToeButtonManager : MonoBehaviour
                     break;
                 }
             }
-
-            //Better AI
+            //AI Level 2
+            //AI Level 3
         }
     }
 }

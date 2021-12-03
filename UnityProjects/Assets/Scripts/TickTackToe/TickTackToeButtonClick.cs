@@ -11,6 +11,7 @@ public class TickTackToeButtonClick : MonoBehaviour
     {
         if (TickTackToeStats.buttonUsed[buttonPosition - 1] == 0 && TickTackToeStats.gameRunning)
         {
+            TickTackToeStats.movesDone[TickTackToeStats.moves] = buttonPosition;
             TickTackToeStats.moves++;
 
             if (TickTackToeStats.player1ToMove)
@@ -31,6 +32,8 @@ public class TickTackToeButtonClick : MonoBehaviour
                 TickTackToeButtonManager.instance.ComputerMove();
         }
         else
-            ;//Next Scene
+        {
+            //Next Scene
+        }
     }
 }

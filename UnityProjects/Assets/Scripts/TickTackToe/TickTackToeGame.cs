@@ -50,9 +50,12 @@ public class TickTackToeGame : MonoBehaviour
         switch (player)
         {
             case 1:
+                TickTackToeStats.player1Won = true;
                 Debug.Log("Player " + player + " won!");
                 break;
             case 2:
+                TickTackToeStats.player2Won = true;
+
                 if (TickTackToeStats.computer)
                     Debug.Log("Computer won!");
                 else
@@ -61,5 +64,8 @@ public class TickTackToeGame : MonoBehaviour
         }
 
         TickTackToeStats.gameRunning = false;
+
+        for (int i = 0; i < TickTackToeStats.movesDone.Length; i++)
+            Debug.Log(TickTackToeStats.movesDone[i]);
     }
 }
