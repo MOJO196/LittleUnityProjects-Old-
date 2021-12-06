@@ -43,6 +43,9 @@ public class TicTacToeButtonManager : MonoBehaviour
                 }
             }
             //AI Level 2
+            for (int i )
+            if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player)
+        
             //AI Level 3
         }
     }
