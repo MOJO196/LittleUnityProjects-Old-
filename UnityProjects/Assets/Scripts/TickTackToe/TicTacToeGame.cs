@@ -18,23 +18,23 @@ public class TicTacToeGame : MonoBehaviour
     public int CheckGameState(int player)
     {
         //Rows   
-        if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[2] == player)
+        if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[2] == player)
             return 1;
-        else if (TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[5] == player)
+        else if (TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[5] == player)
             return 2;
-        else if (TicTacToeStats.premoves[6] == player && TicTacToeStats.premoves[7] == player && TicTacToeStats.premoves[8] == player)
+        else if (TicTacToeStats.buttonUsed[6] == player && TicTacToeStats.buttonUsed[7] == player && TicTacToeStats.buttonUsed[8] == player)
             return 3;
         //Columns
-        else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[6] == player)
+        else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[6] == player)
             return 4;
-        else if (TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[7] == player)
+        else if (TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[7] == player)
             return 5;
-        else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[5] == player && TicTacToeStats.premoves[8] == player)
+        else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[5] == player && TicTacToeStats.buttonUsed[8] == player)
             return 6;
         //Diagonals
-        else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[8] == player)
+        else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[8] == player)
             return 7;
-        else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[6] == player)
+        else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[6] == player)
             return 8;
         else
             return 0;

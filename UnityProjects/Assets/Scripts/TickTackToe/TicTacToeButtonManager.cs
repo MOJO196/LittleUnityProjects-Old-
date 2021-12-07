@@ -22,7 +22,7 @@ public class TicTacToeButtonManager : MonoBehaviour
     {
         if (TicTacToeStats.computer && !TicTacToeStats.player1ToMove)
         {
-            ComputerMove();
+            SimulateNextMoves();
         }
     }
 
@@ -50,34 +50,31 @@ public class TicTacToeButtonManager : MonoBehaviour
 
         for (int i = 0; i < 9; i++)
         {
-            TicTacToeStats.premoves = TicTacToeStats.buttonUsed;
-
-            for (int j = 0; j < 9; j++)
+            if (TicTacToeStats.buttonUsed[i] == 0)
             {
-                //Debug.Log(string.Format("Pre: {0} , Move: {1} ",TicTacToeStats.premoves[j],TicTacToeStats.buttonUsed[j]));
-            }
-
-            if (TicTacToeStats.premoves[i] == 0)
-            {
-                TicTacToeStats.premoves[i] = 5;
+                TicTacToeStats.buttonUsed[i] = 5;
                 result = TicTacToeGame.instance.CheckGameState(2);
-                TicTacToeStats.premoves[i] = 0;
+                Debug.Log(result);
+                TicTacToeStats.buttonUsed[i] = 0;
 
-                if (result == 1)
+                if (result != 0)
                 {
                     Move(i);
                     break;
                 }
-                else if (result == 0 && i <= 8)
+                else if (result == 0 && i == 8)
+                {
                     RandomMove();
+                    break;
+                }
             }
         }
     }
 
-    private void Move(int poition)
+    private void Move(int position)
     {
-        buttons[poition].Select();
-        buttons[poition].onClick.Invoke();
+        buttons[position].Select();
+        buttons[position].onClick.Invoke();
     }
 
     private void RandomMove()

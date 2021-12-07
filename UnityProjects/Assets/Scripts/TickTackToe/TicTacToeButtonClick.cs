@@ -12,7 +12,6 @@ public class TicTacToeButtonClick : MonoBehaviour
         if (TicTacToeStats.buttonUsed[buttonPosition - 1] == 0 && TicTacToeStats.gameRunning)
         {
             TicTacToeStats.moves++;
-            Debug.Log(TicTacToeStats.moves);
 
             if (TicTacToeStats.player1ToMove)
             {
@@ -30,10 +29,7 @@ public class TicTacToeButtonClick : MonoBehaviour
             TicTacToeStats.player1ToMove = !TicTacToeStats.player1ToMove;
 
             if (TicTacToeStats.computer && !TicTacToeStats.player1ToMove)
-            {
-                //Debug.Log(TicTacToeStats.player1ToMove);
                 TicTacToeButtonManager.instance.ComputerMove();
-            }
             else
                 TicTacToePlayerToMove.instance.PlayerToMove();
         }

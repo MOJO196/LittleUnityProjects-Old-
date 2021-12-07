@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomPlayerToBeginn: 0
-  player1ToBeginn: 1
+  player1ToBeginn: 0
   againstComputer: 1
   AILevel: 2
 --- !u!1 &1964455285
