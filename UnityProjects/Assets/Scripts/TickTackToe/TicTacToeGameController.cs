@@ -7,6 +7,7 @@ public class TicTacToeGameController : MonoBehaviour
     public bool randomPlayerToBeginn;
     public bool player1ToBeginn;
     public bool againstComputer;
+    public int AILevel;
     public static TicTacToeGameController instance;
     void Awake()
     {
@@ -21,10 +22,11 @@ public class TicTacToeGameController : MonoBehaviour
             TicTacToeStats.player1ToMove = true;
         else if (!randomPlayerToBeginn)
             TicTacToeStats.player1ToMove = player1ToBeginn;
-        else 
+        else
             TicTacToeStats.player1ToMove = false;
 
         TicTacToeStats.computer = againstComputer;
+        TicTacToeStats.AILevel = AILevel;
     }
 
     private void Start()

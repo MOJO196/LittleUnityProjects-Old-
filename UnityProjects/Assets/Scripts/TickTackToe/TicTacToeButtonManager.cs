@@ -28,16 +28,19 @@ public class TicTacToeButtonManager : MonoBehaviour
 
     public void ComputerMove()
     {
-        if (TicTacToeStats.gameRunning)
+        if (TicTacToeStats.gameRunning && !TicTacToeStats.player1ToMove)
         {
-            Debug.Log("AI Move");
-            //AI Level 1
-            //RandomMove();
-
-            //AI Level 2
-            SimulateNextMoves();
-                    
-            //AI Level 3
+            switch (TicTacToeStats.AILevel)
+            {
+                case 1:
+                    RandomMove();
+                    break;
+                case 2:
+                    SimulateNextMoves();
+                    break;
+                case 3:
+                    break;
+            }
         }
     }
 
@@ -48,18 +51,24 @@ public class TicTacToeButtonManager : MonoBehaviour
         for (int i = 0; i < 9; i++)
         {
             TicTacToeStats.premoves = TicTacToeStats.buttonUsed;
-            
+
+            for (int j = 0; j < 9; j++)
+            {
+                //Debug.Log(string.Format("Pre: {0} , Move: {1} ",TicTacToeStats.premoves[j],TicTacToeStats.buttonUsed[j]));
+            }
+
             if (TicTacToeStats.premoves[i] == 0)
             {
-                TicTacToeStats.premoves[i] = 2;
+                TicTacToeStats.premoves[i] = 5;
                 result = TicTacToeGame.instance.CheckGameState(2);
+                TicTacToeStats.premoves[i] = 0;
 
                 if (result == 1)
                 {
                     Move(i);
                     break;
                 }
-                else if (result == 0 && i == 8)
+                else if (result == 0 && i <= 8)
                     RandomMove();
             }
         }
@@ -73,15 +82,15 @@ public class TicTacToeButtonManager : MonoBehaviour
 
     private void RandomMove()
     {
-        for (;;)
-            {
-                int computerMove = Random.Range(0, 9);
+        for (; ; )
+        {
+            int computerMove = Random.Range(0, 9);
 
-                if (TicTacToeStats.buttonUsed[computerMove] == 0)
-                {
-                    Move(computerMove);
-                    break;
-                }
+            if (TicTacToeStats.buttonUsed[computerMove] == 0)
+            {
+                Move(computerMove);
+                break;
             }
+        }
     }
 }

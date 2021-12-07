@@ -21,21 +21,21 @@ public class TicTacToeGame : MonoBehaviour
         if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[2] == player)
             return 1;
         else if (TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[5] == player)
-            return 1;
+            return 2;
         else if (TicTacToeStats.premoves[6] == player && TicTacToeStats.premoves[7] == player && TicTacToeStats.premoves[8] == player)
-            return 1;
+            return 3;
         //Columns
         else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[6] == player)
-            return 1;
+            return 4;
         else if (TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[7] == player)
-            return 1;
+            return 5;
         else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[5] == player && TicTacToeStats.premoves[8] == player)
-            return 1;
+            return 6;
         //Diagonals
         else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[8] == player)
-            return 1;
+            return 7;
         else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[6] == player)
-            return 1;
+            return 8;
         else
             return 0;
     }

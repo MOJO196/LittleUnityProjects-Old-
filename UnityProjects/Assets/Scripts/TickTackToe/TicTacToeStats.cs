@@ -14,4 +14,5 @@ public static class TicTacToeStats
     public static bool player2Won;
     //GameModes
     public static bool computer;
+    public static int AILevel;
 }
