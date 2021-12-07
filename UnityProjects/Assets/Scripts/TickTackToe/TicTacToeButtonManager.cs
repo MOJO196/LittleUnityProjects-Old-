@@ -30,23 +30,58 @@ public class TicTacToeButtonManager : MonoBehaviour
     {
         if (TicTacToeStats.gameRunning)
         {
+            Debug.Log("AI Move");
             //AI Level 1
-            while (true)
+            //RandomMove();
+
+            //AI Level 2
+            SimulateNextMoves();
+                    
+            //AI Level 3
+        }
+    }
+
+    private void SimulateNextMoves()
+    {
+        int result;
+
+        for (int i = 0; i < 9; i++)
+        {
+            TicTacToeStats.premoves = TicTacToeStats.buttonUsed;
+            
+            if (TicTacToeStats.premoves[i] == 0)
+            {
+                TicTacToeStats.premoves[i] = 2;
+                result = TicTacToeGame.instance.CheckGameState(2);
+
+                if (result == 1)
+                {
+                    Move(i);
+                    break;
+                }
+                else if (result == 0 && i == 8)
+                    RandomMove();
+            }
+        }
+    }
+
+    private void Move(int poition)
+    {
+        buttons[poition].Select();
+        buttons[poition].onClick.Invoke();
+    }
+
+    private void RandomMove()
+    {
+        for (;;)
             {
                 int computerMove = Random.Range(0, 9);
 
                 if (TicTacToeStats.buttonUsed[computerMove] == 0)
                 {
-                    buttons[computerMove].Select();
-                    buttons[computerMove].onClick.Invoke();
+                    Move(computerMove);
                     break;
                 }
             }
-            //AI Level 2
-            for (int i )
-            if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player)
-        
-            //AI Level 3
-        }
     }
 }

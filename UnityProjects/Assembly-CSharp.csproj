@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Pong\PongBallMovement.cs" />
      <Compile Include="Assets\Scripts\Pong\PongPlayerControll.cs" />
      <Compile Include="Assets\Scripts\Pong\PongScoreManager.cs" />
+     <Compile Include="Assets\Scripts\TickTackToe\TicTacToeAI.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeButtonClick.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeButtonManager.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeGame.cs" />

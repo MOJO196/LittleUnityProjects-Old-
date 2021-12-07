@@ -7,6 +7,7 @@ public static class TicTacToeStats
     public static bool gameRunning = true;
     public static int moves;
     public static int[] buttonUsed = new int[9];
+    public static int[] premoves = new int[9];
     //Result
     public static bool draw;
     public static bool player1Won;

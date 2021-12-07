@@ -15,7 +15,33 @@ public class TicTacToeGame : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void CheckGameState(int player)
+    public int CheckGameState(int player)
+    {
+        //Rows   
+        if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[2] == player)
+            return 1;
+        else if (TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[5] == player)
+            return 1;
+        else if (TicTacToeStats.premoves[6] == player && TicTacToeStats.premoves[7] == player && TicTacToeStats.premoves[8] == player)
+            return 1;
+        //Columns
+        else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[3] == player && TicTacToeStats.premoves[6] == player)
+            return 1;
+        else if (TicTacToeStats.premoves[1] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[7] == player)
+            return 1;
+        else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[5] == player && TicTacToeStats.premoves[8] == player)
+            return 1;
+        //Diagonals
+        else if (TicTacToeStats.premoves[0] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[8] == player)
+            return 1;
+        else if (TicTacToeStats.premoves[2] == player && TicTacToeStats.premoves[4] == player && TicTacToeStats.premoves[6] == player)
+            return 1;
+        else
+            return 0;
+    }
+
+
+    public void CheckPlayerWon(int player)
     {
         //Rows
         if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[2] == player)
