@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeButtonManager.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeGame.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeGameController.cs" />
+     <Compile Include="Assets\Scripts\TickTackToe\TicTacToeMenuButtons.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToePlayerToMove.cs" />
      <Compile Include="Assets\Scripts\TickTackToe\TicTacToeStats.cs" />
     <Reference Include="UnityEngine">

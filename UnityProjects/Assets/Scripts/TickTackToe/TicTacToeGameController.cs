@@ -17,7 +17,11 @@ public class TicTacToeGameController : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+        StartGame();
+    }
 
+    public void StartGame()
+    {
         if (Random.value >= 0.5 && randomPlayerToBeginn)
             TicTacToeStats.player1ToMove = true;
         else if (!randomPlayerToBeginn)
@@ -27,10 +31,6 @@ public class TicTacToeGameController : MonoBehaviour
 
         TicTacToeStats.computer = againstComputer;
         TicTacToeStats.AILevel = AILevel;
-    }
-
-    private void Start()
-    {
         TicTacToePlayerToMove.instance.PlayerToMove();
     }
 }
