@@ -51,27 +51,34 @@ public class TicTacToeGame : MonoBehaviour
                 PlayerWon(player);
         return winningRow;
     }
+
     public void Draw()
     {
         Debug.Log("Draw");
         TicTacToeStats.draw = true;
         TicTacToeStats.gameRunning = false;
+        TicTacToeStats.player1Score += 0.5f;
+        TicTacToeStats.player2Score += 0.5f;
     }
+
     public void PlayerWon(int player)
     {
         switch (player)
         {
             case 1:
+                TicTacToeStats.player1Won = true;
+                TicTacToeStats.player1Score++;
                 Debug.Log("Player " + player + " won!");
                 break;
             case 2:
+                TicTacToeStats.player2Won = true;
+                TicTacToeStats.player2Score++;
                 if (TicTacToeStats.computer)
                     Debug.Log("Computer won!");
                 else
                     Debug.Log("Player " + player + " won!");
                 break;
         }
-
         TicTacToeStats.gameRunning = false;
     }
 }

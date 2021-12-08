@@ -21,9 +21,7 @@ public class TicTacToeButtonManager : MonoBehaviour
     private void Start()
     {
         if (TicTacToeStats.computer && !TicTacToeStats.player1ToMove)
-        {
-            SimulateNextMoves();
-        }
+            ComputerMove();
     }
 
     public void ComputerMove()
