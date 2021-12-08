@@ -15,62 +15,48 @@ public class TicTacToeGame : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public int CheckGameState(int player)
+    public int CheckGameState(int player, bool getWinner)
     {
+        int winningRow;
         //Rows   
         if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[2] == player)
-            return 1;
+            winningRow = 1;
         else if (TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[5] == player)
-            return 2;
+            winningRow = 2;
         else if (TicTacToeStats.buttonUsed[6] == player && TicTacToeStats.buttonUsed[7] == player && TicTacToeStats.buttonUsed[8] == player)
-            return 3;
+            winningRow = 3;
         //Columns
         else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[6] == player)
-            return 4;
+            winningRow = 4;
         else if (TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[7] == player)
-            return 5;
+            winningRow = 5;
         else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[5] == player && TicTacToeStats.buttonUsed[8] == player)
-            return 6;
+            winningRow = 6;
         //Diagonals
         else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[8] == player)
-            return 7;
+            winningRow = 7;
         else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[6] == player)
-            return 8;
+            winningRow = 8;
         else
-            return 0;
-    }
+            winningRow = 0;
 
-
-    public void CheckPlayerWon(int player)
-    {
-        //Rows
-        if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[2] == player)
-            PlayerWon(player);
-        else if (TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[5] == player)
-            PlayerWon(player);
-        else if (TicTacToeStats.buttonUsed[6] == player && TicTacToeStats.buttonUsed[7] == player && TicTacToeStats.buttonUsed[8] == player)
-            PlayerWon(player);
-        //Columns
-        else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[3] == player && TicTacToeStats.buttonUsed[6] == player)
-            PlayerWon(player);
-        else if (TicTacToeStats.buttonUsed[1] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[7] == player)
-            PlayerWon(player);
-        else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[5] == player && TicTacToeStats.buttonUsed[8] == player)
-            PlayerWon(player);
-        //Diagonals
-        else if (TicTacToeStats.buttonUsed[0] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[8] == player)
-            PlayerWon(player);
-        else if (TicTacToeStats.buttonUsed[2] == player && TicTacToeStats.buttonUsed[4] == player && TicTacToeStats.buttonUsed[6] == player)
-            PlayerWon(player);
-        //Check for draw
-        else if (TicTacToeStats.moves == 9)
+        if (winningRow == 0)
         {
-            Debug.Log("Draw");
-            TicTacToeStats.draw = true;
-            TicTacToeStats.gameRunning = false;
+            //Nobody wins
+            if (TicTacToeStats.moves == 9 && getWinner)
+                Draw();
         }
+        else
+            if (getWinner)
+                PlayerWon(player);
+        return winningRow;
     }
-
+    public void Draw()
+    {
+        Debug.Log("Draw");
+        TicTacToeStats.draw = true;
+        TicTacToeStats.gameRunning = false;
+    }
     public void PlayerWon(int player)
     {
         switch (player)

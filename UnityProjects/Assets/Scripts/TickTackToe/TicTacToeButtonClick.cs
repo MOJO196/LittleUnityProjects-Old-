@@ -17,13 +17,13 @@ public class TicTacToeButtonClick : MonoBehaviour
             {
                 buttonImage.color = Color.blue;
                 TicTacToeStats.buttonUsed[buttonPosition - 1] = 1;
-                TicTacToeGame.instance.CheckPlayerWon(1);
+                TicTacToeGame.instance.CheckGameState(1, true);
             }
             else
             {
                 buttonImage.color = Color.red;
                 TicTacToeStats.buttonUsed[buttonPosition - 1] = 2;
-                TicTacToeGame.instance.CheckPlayerWon(2);
+                TicTacToeGame.instance.CheckGameState(2, true);
             }
 
             TicTacToeStats.player1ToMove = !TicTacToeStats.player1ToMove;

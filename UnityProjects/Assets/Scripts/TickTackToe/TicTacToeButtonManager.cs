@@ -46,26 +46,44 @@ public class TicTacToeButtonManager : MonoBehaviour
 
     private void SimulateNextMoves()
     {
-        int result;
+        int result = 0;
 
         for (int i = 0; i < 9; i++)
         {
             if (TicTacToeStats.buttonUsed[i] == 0)
             {
-                TicTacToeStats.buttonUsed[i] = 5;
-                result = TicTacToeGame.instance.CheckGameState(2);
-                Debug.Log(result);
+                TicTacToeStats.buttonUsed[i] = 2;
+                result = TicTacToeGame.instance.CheckGameState(2, false);
                 TicTacToeStats.buttonUsed[i] = 0;
-
                 if (result != 0)
                 {
+                    Debug.Log("WinningMove");
                     Move(i);
                     break;
                 }
-                else if (result == 0 && i == 8)
+            }
+            if (result == 0 && i == 8)
+            {
+                for (int j = 0; j < 9; j++)
                 {
-                    RandomMove();
-                    break;
+                    if (TicTacToeStats.buttonUsed[j] == 0)
+                    {
+                        TicTacToeStats.buttonUsed[j] = 1;
+                        result = TicTacToeGame.instance.CheckGameState(1, false);
+                        TicTacToeStats.buttonUsed[j] = 0;
+
+                        if (result != 0)
+                        {
+                            Debug.Log("WinBlockingMove");
+                            Move(j);
+                            break;
+                        }
+                    }
+                    if (result == 0 && j == 8)
+                    {
+                        Debug.Log("RandomMove");
+                        RandomMove();
+                    }
                 }
             }
         }
