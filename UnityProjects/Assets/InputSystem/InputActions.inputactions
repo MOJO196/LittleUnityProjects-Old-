@@ -1,5 +1,5 @@
 {
-    "name": "PongPlayerInputActi ons",
+    "name": "InputActions",
     "maps": [
         {
             "name": "PongPlayer1",
@@ -88,6 +88,52 @@
                     "processors": "",
                     "groups": "",
                     "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TicTacToe",
+            "id": "16004502-c97f-41ed-a8e4-4c1d892e0f47",
+            "actions": [
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "720e9c3e-b432-4aff-8f17-4c88e2aa9870",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "EndGame",
+                    "type": "Button",
+                    "id": "12c4a202-558a-42db-a3d0-bb2907ce9065",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1f360744-ed67-4c0e-a812-fc19adb7df7e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90902fa6-609b-4d9c-b012-c17b5a151b0d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EndGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

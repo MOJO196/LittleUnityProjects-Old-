@@ -33,9 +33,9 @@ public class TicTacToeButtonClick : MonoBehaviour
             else
                 TicTacToePlayerToMove.instance.PlayerToMove();
         }
-        else
+        else if (TicTacToeStats.buttonUsed[buttonPosition - 1] == 0 && !TicTacToeStats.gameRunning)
         {
-            //NextScene
+            buttonImage.color = Color.white;
         }
     }
 }

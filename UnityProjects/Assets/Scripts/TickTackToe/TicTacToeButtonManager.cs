@@ -87,7 +87,7 @@ public class TicTacToeButtonManager : MonoBehaviour
         }
     }
 
-    private void Move(int position)
+    public void Move(int position)
     {
         buttons[position].Select();
         buttons[position].onClick.Invoke();
